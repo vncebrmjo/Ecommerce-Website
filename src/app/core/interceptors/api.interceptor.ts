@@ -10,10 +10,6 @@ import { environment } from '../../../environments/environment';
 export const ApiInterceptor: HttpInterceptorFn = (req, next) => {
   // Clone request and add common headers
   const modifiedReq = req.clone({
-    setHeaders: {
-      'Content-Type': 'application/json',
-      'X-Requested-With': 'XMLHttpRequest'
-    },
     withCredentials: true // Enable credentials for CORS
   });
 
